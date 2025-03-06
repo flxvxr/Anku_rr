@@ -1,0 +1,107 @@
+﻿<Window x:Class="WeatherApp.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="WeatherApp"
+        WindowStyle="None"
+        ResizeMode="NoResize"
+        Background="Transparent"
+        WindowStartupLocation="CenterScreen"
+        Width="300"
+        Height="250"
+        KeyDown="Window_KeyDown">
+
+    <Grid MouseLeftButtonDown="Grid_MouseLeftButtonDown">
+        <!-- Фон окна (градиент) -->
+        <Grid.Background>
+            <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                <GradientStop Color="#FF34567A" Offset="0.0" />
+                <GradientStop Color="#FF1F2E48" Offset="1.0" />
+            </LinearGradientBrush>
+        </Grid.Background>
+
+        <!-- "Карточка" по центру -->
+        <Border CornerRadius="10"
+                Background="White"
+                Padding="15"
+                Margin="15">
+            <StackPanel>
+                <!-- Заголовок -->
+                <TextBlock Text="Weather App"
+                           FontSize="18"
+                           FontWeight="SemiBold"
+                           Foreground="#FF34567A"
+                           HorizontalAlignment="Center"
+                           />
+
+                <TextBlock Text="Введите город:"
+                           Margin="0,10,0,3"
+                           FontWeight="Bold"
+                           Foreground="#FF1F2E48" />
+
+                <!-- Поле ввода -->
+                <TextBox x:Name="CityTextBox"
+                         Margin="0,0,0,8"
+                         Height="30"
+                         Padding="5,4,5,4"
+                         BorderBrush="#FF34567A"
+                         BorderThickness="1"
+                         VerticalContentAlignment="Center"/>
+
+                <!-- Кнопка -->
+                <Button Content="Получить температуру"
+                        Width="180"
+                        Height="28"
+                        HorizontalAlignment="Center"
+                        Background="#FF34567A"
+                        Foreground="White"
+                        BorderBrush="#FF34567A"
+                        BorderThickness="1"
+                        Click="GetTemperatureButton_Click"
+                        Cursor="Hand"
+                        Margin="0,3,0,0">
+                    <Button.Style>
+                        <Style TargetType="Button">
+                            <Setter Property="Template">
+                                <Setter.Value>
+                                    <ControlTemplate TargetType="Button">
+                                        <Border CornerRadius="5"
+                                                Background="{TemplateBinding Background}"
+                                                BorderBrush="{TemplateBinding BorderBrush}"
+                                                BorderThickness="{TemplateBinding BorderThickness}">
+                                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                        </Border>
+                                    </ControlTemplate>
+                                </Setter.Value>
+                            </Setter>
+                            <!-- Триггеры для наведения и нажатия -->
+                            <Style.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter Property="Background" Value="#FF23405B"/>
+                                    <Setter Property="BorderBrush" Value="#FF23405B"/>
+                                </Trigger>
+                                <Trigger Property="IsPressed" Value="True">
+                                    <Setter Property="Background" Value="#FF0F2439"/>
+                                    <Setter Property="BorderBrush" Value="#FF0F2439"/>
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Button.Style>
+                </Button>
+
+                <!-- Статус (загрузка, ошибки, время обновления) -->
+                <TextBlock x:Name="StatusTextBlock"
+                           Margin="0,8,0,0"
+                           HorizontalAlignment="Center"
+                           Foreground="#FF1F2E48" />
+
+                <!-- Температура -->
+                <TextBlock x:Name="TemperatureTextBlock"
+                           FontSize="20"
+                           FontWeight="Bold"
+                           Margin="0,8,0,0"
+                           HorizontalAlignment="Center"
+                           Foreground="#FF34567A" />
+            </StackPanel>
+        </Border>
+    </Grid>
+</Window>

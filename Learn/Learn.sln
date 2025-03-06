@@ -2,6 +2,8 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Learn", "Learn\Learn.csproj", "{F6435B11-DD6A-4BBF-8DF9-0E24863F78B4}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestTempWPF", "TestTempWPF\TestTempWPF.csproj", "{A28645B0-13EC-4FDC-8171-D0D2D4C214FB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -12,5 +14,9 @@ Global
 		{F6435B11-DD6A-4BBF-8DF9-0E24863F78B4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F6435B11-DD6A-4BBF-8DF9-0E24863F78B4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F6435B11-DD6A-4BBF-8DF9-0E24863F78B4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A28645B0-13EC-4FDC-8171-D0D2D4C214FB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A28645B0-13EC-4FDC-8171-D0D2D4C214FB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A28645B0-13EC-4FDC-8171-D0D2D4C214FB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A28645B0-13EC-4FDC-8171-D0D2D4C214FB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
