@@ -94,9 +94,7 @@ namespace WeatherApp
         private async void CreateTimer()
         {
             await WaitBeforeClosestMinute();
-
             await UpdateTemperature();
-
             _updateTimer = new DispatcherTimer();
             _updateTimer.Tick += UpdateTimer_Tick;
             _updateTimer.Interval = TimeSpan.FromMinutes(1);
