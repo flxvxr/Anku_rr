@@ -2,9 +2,16 @@ namespace AbstractFactory;
 
 public class ConsoleUpperCaseWriter: IConsoleWriter
 {
+    private IConsoleWriter _consoleWriter;
+    
+    public ConsoleUpperCaseWriter(IConsoleWriter consoleWriter)
+    {
+        _consoleWriter = consoleWriter;
+    }
+
     public void Write(string message)
     {
         message = message.ToUpper();
-        Console.WriteLine(message);
+        _consoleWriter.Write(message);
     }
 }
